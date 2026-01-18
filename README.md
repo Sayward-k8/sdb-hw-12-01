@@ -47,9 +47,9 @@
     id_структурного подразделения PRIMARY KEY serial,
     название подразделения VARCHAR(255) NOT NULL,
     id_типа_подразделения INT NOT NULL,
-    foreign key(id_типа_подразделения) REFERENCES Типы_подразделений(id),
+    FOREIGN KEY (id_типа_подразделения) REFERENCES Типы_подразделений(id),
     id_филиала INT NOT NULL,
-    foreign key(id_филиала) REFERENCES Филиалы(id)
+    FOREIGN KEY (id_филиала) REFERENCES Филиалы(id)
     );
 ```
 </details>
@@ -75,10 +75,10 @@
     ФИО VARCHAR(50) NOT NULL,
     Оклад NUMERIC(10,2) CHECK (оклад > 0)
     id_должность INT NOT NULL,
-    foreign key (id_должность) REFERENCES Должности(id),
+    FOREIGN KEY (id_должность) REFERENCES Должности(id),
     Дата найма DATE NOT NULL,
     id_структурного подразделения INT NOT NULL,
-    foreign key (id_структурного подразделения) REFERENCES Структурные_подразделения(id)
+    FOREIGN KEY (id_структурного подразделения) REFERENCES Структурные_подразделения(id)
     );
 ```
 </details>
